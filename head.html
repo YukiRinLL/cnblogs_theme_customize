@@ -1,0 +1,87 @@
+<!--随机背景图-->
+ <script type="text/javascript">
+    //<!CDATA[
+        var bodyBgs = [];
+        bodyBgs[0] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_c8422da75ab12a5776fe4647d352665df16c6a21.jpg";
+        bodyBgs[2] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_99dc832a4dbb6bb3d62a292e8cf12f8d1652b5fd.jpg";
+        bodyBgs[3] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_92206e6dd9468cf5b3d3202f7f66c7dfc64d4e04.jpg";
+bodyBgs[4] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_2044364624-3.jpg";
+bodyBgs[5] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_1-1Z10H24410-50.jpg";
+bodyBgs[6] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_81877565632b8c89eacd8bd0ae26938199d49f79.jpg";
+bodyBgs[7] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_e6674c08fbe0db19383ee84310c39459c2b44453gai2.jpg";
+bodyBgs[8] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_QQ%E5%9B%BE%E7%89%8720150814130149.jpg";
+bodyBgs[9] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_2044362493-19.jpg";
+bodyBgs[10] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_QQ%E5%9B%BE%E7%89%8720181111170133.jpg";
+bodyBgs[11] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_QQ%E5%9B%BE%E7%89%8720181111170140.jpg";
+bodyBgs[12] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_QQ%E5%9B%BE%E7%89%8720181111170216.jpg";
+bodyBgs[13] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_2044361E0-2.jpg";
+bodyBgs[14] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_QQ%E5%9B%BE%E7%89%8720181111170227.jpg";
+bodyBgs[15] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_o_IMG_107gai.jpg";
+bodyBgs[16] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_20443C944-15.jpg";
+bodyBgs[17] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_20443B236-14.jpg";
+//bodyBgs[18] = "";
+//bodyBgs[19] = "";
+//bodyBgs[22] = "";
+//bodyBgs[23] = "";
+//bodyBgs[24] = "";
+        var randomBgIndex = Math.round( Math.random() * 17 );
+    //输出随机的背景图
+        document.write('<style>body{background:url(' + bodyBgs[randomBgIndex] + ')fixed;background-size:cover;no-repeat 50% 0}</style>');
+    //]]>
+    </script>
+
+
+<!--Wider的一些样式-->
+<link href="https://blog-static.cnblogs.com/files/SutsuharaYuki/font-awesome.min.css" rel="stylesheet">
+
+<!-- 定时器 -->
+<script>
+function customTimer(inpId, fn) {
+  if ($(inpId).length) {
+    fn();
+  }
+  else {
+    var intervalId = setInterval(function () {
+      if ($(inpId).length) {  //如果存在了
+        clearInterval(intervalId);  // 则关闭定时器
+        customTimer(inpId, fn);              //执行自身
+      }
+    }, 100);
+  }
+}
+function generateTagClouds() {
+  $('.catListTag>ul').wrap('<div class=\'wrap\' ></div>').parent().css({ 'width': '240px', 'height': '240px' });
+  var options = {
+    'range': [-200, 300],
+    'gravity': -10,
+    'xPos': 0.5,
+    'yPos': 0.5,
+    'gravityVector': [0, 0, 1],
+    'interval': 100,
+    'hoverGravityFactor': 0
+  };
+  $('div.wrap').starfieldTagCloud(options);
+}
+$(function () {
+  ...
+  customTimer('.catListTag', generateTagClouds);
+  ...
+});
+</script>
+
+<!-- 自定制样式文件以及脚本 -->
+<!-- 分享 --><!-- 外源加载 -->
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" >
+var jiathis_config={
+    siteNum:15,
+    sm:"copy,qzone,tsina,weixin,tqq,tsohu,renren,cqq,tieba,douban,kaixin001,t163,yixin,51,copy",
+    summary:"",
+    boldNum:6,
+    showClose:true,
+    shortUrl:false,
+    hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?btn=r.gif&move=0" charset="utf-8"></script>
+<!-- JiaThis Button END -->

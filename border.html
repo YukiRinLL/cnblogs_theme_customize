@@ -1,0 +1,320 @@
+<meta charset="utf-8" />
+
+<!--Wider的一些样式-->
+<style type="text/css">
+.dashboard{
+    background: #fff;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+}
+.dashboard a{
+    color: #5a5f69;
+    float: left;
+    width: calc(25% - 4px);
+    height: 51px;
+    display: block;
+    font-size: 26px;
+    line-height: 51px;
+    text-align: center;
+    border-radius: 100%;
+    margin: 2px;
+}
+</style>
+
+
+<!--时钟插件-->
+<script type="text/javascript" src="https://blog-static.cnblogs.com/files/SutsuharaYuki/RoundClock.js">
+  var dom = document.getElementById('clock');
+  var ctx = dom.getContext('2d');
+  var width = ctx.canvas.width;
+  var height = ctx.canvas.height;
+  var r = width / 2;
+  //定义钟盘
+  function drawBackground(){
+      ctx.save();
+      ctx.translate(r, r);
+      ctx.beginPath();
+      ctx.lineWidth = 10;
+      ctx.font ='18px Arial';
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+      ctx.arc(0, 0, r-5, 0, 2 * Math.PI, false);
+      ctx.stroke();
+      var hourNumbers = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2];
+    //遍历获取坐标
+    hourNumbers.forEach(function(number, i){
+        var rad = 2 * Math.PI / 12 * i;
+        var x = Math.cos(rad) * (r - 30);
+        var y = Math.sin(rad) * (r - 30);
+        ctx.fillText(number, x ,y);
+    })
+    //定义刻度
+    for(var i=0;i<60;i++){
+        var rad = 2 * Math.PI / 60 * i;
+        var x = Math.cos(rad) * (r - 18);
+        var y = Math.sin(rad) * (r - 18);
+        ctx.beginPath();
+        if(i % 5 == 0){
+            ctx.arc(x, y, 2, 0, 2 * Math.PI, false);
+            ctx.fillStyle = '#000';
+        }else{
+            ctx.arc(x, y, 2, 0, 2 * Math.PI, false);
+            ctx.fillStyle = '#ccc';
+        }
+        ctx.fill();
+    }
+}
+//定义时钟
+function drawHour(hour,minute){
+    ctx.save();
+    ctx.beginPath();
+    var rad = 2 * Math.PI / 12 * hour;
+    var mrad = 2 * Math.PI / 12 / 60 * minute;
+    ctx.rotate(rad + mrad);
+    ctx.lineWidth = 6;
+    ctx.lineCap= 'round';
+    ctx.moveTo(0 ,10);
+    ctx.lineTo(0 ,-r / 2);
+    ctx.stroke();
+    ctx.restore();
+}
+//定义分钟
+function drawMinute(minute,second){
+    ctx.save();
+    ctx.beginPath();
+    var rad = 2 * Math.PI / 60 * minute;
+    var srad = 2 * Math.PI / 60 /60 * second;
+    ctx.rotate(rad + srad);
+    ctx.lineWidth = 3;
+    ctx.lineCap= 'round';
+    ctx.moveTo(0 ,10);
+    ctx.lineTo(0 ,-r + 18);
+    ctx.stroke();
+    ctx.restore();
+}
+//定义秒钟
+function drawSecond(second){
+    ctx.save();
+    ctx.beginPath();
+    var rad = 2 * Math.PI / 60 * second;
+    ctx.rotate(rad);
+    ctx.lineWidth = 3;
+    ctx.lineCap= 'round';
+    ctx.moveTo(-2 ,20);
+    ctx.lineTo( 2, 20);
+    ctx.lineTo( 1, -r + 18);
+    ctx.lineTo( -1, -r + 18);
+    ctx.fillStyle = '#c14543';
+    ctx.fill();
+    ctx.restore();
+}
+//定义钟盘圆点样式
+function drawDot(){
+    ctx.beginPath();
+    ctx.fillStyle = '#fff';
+    ctx.arc(0, 0, 3, 0, 2 * Math.PI, false);
+    ctx.fill();
+}
+//时间函数
+function draw(){
+    ctx.clearRect(0, 0, width, height);
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    drawBackground();
+    drawHour(hour,minute);
+    drawMinute(minute,second);
+    drawSecond(second);
+    drawDot();
+    ctx.restore();
+}
+setInterval(draw, 1000);
+RoundClock.js
+</script><!-- 圆形时钟 -->
+<!--圆形时钟-->
+<div class="clockdiv">
+    <canvas id="clock" width ="200px" height="200px">您的浏览器不兼容canvas</canvas>
+</div>
+
+
+<!--访问统计--> <!--外源加载(unavailable)-->
+
+<!-- 头像(用QQ联系查件改，可链接) -->
+<a href="https://wpa.qq.com/msgrd?v=3&uin=944989026&site=qq&menu=yes" target="_blank">
+    <img border="0" src="https://pic.cnblogs.com/avatar/1683480/20190509225808.png" alt="YukiRinLL的QQ" title="YukiRinLL的QQ">
+</a>
+<!--sentence-->
+<p>
+    <em> 才疏学浅，还望指教！</em>
+</p>
+<!--QQ联系设置-->
+<div id="contackInfo">
+联系：
+    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=944989026&amp;site=qq&amp;menu=yes">
+        <img align="absmiddle" border="0" src="http://wpa.qq.com/pa?p=2:944989026:41 &amp;r=0.30709030851721764" alt="欢迎与我联系"
+            title="欢迎与我联系">
+    </a>    
+</div>
+<!--name-->
+<p>姓名：鈴原 雪</p>
+<!--QQ群官网-一键加群-->
+加群：
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=303a701e79b0f2b46fdb9ff1ef683a465944759d9c1ae75b0edc8098174495e5"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="成理ACM竞赛队/程协新" title="成理ACM竞赛队/程协新"></a>
+<p>
+    <strong>欢迎加入！</strong>
+</p>
+ 
+<!-- 背景线段动画 -->
+<canvas id="c_n9" width="1920" height="990" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas>
+<script src="https://blog-static.cnblogs.com/files/SutsuharaYuki/canvas-nest.min.js"></script>
+
+<!-- 标签云相关库 --><!-- 外源加载 -->
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://files.cnblogs.com/files/jingmoxukong/jquery.engine3D.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://files.cnblogs.com/files/jingmoxukong/jquery.particlePhysics.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://files.cnblogs.com/files/jingmoxukong/jquery.starfieldTagCloud.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- 3D效果的标签云 -->
+<script src="http://files.cnblogs.com/justinw/jquery.engine3D.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://files.cnblogs.com/justinw/jquery.particlePhysics.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://files.cnblogs.com/justinw/jquery.starfieldTagCloud.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+    //注意：这里是用的随笔分类，可以根据自己情况任意设定。
+    $(".catListPostCategory>ul").wrap("<div class='wrap' ></div>").parent().css({ 'width': '245px', 'height': '496px' });
+    var options = { "range": [-200, 300], "gravity": -10, "xPos": 0.5, "yPos": 0.5, "gravityVector": [0, 0, 1], "interval": 100, "hoverGravityFactor": 0 };
+    jQuery("div.wrap").starfieldTagCloud(options);
+}); 
+</script>
+
+
+<!--更改推荐按钮-->
+<style type="text/css"> 
+#div_digg{
+  position:fixed;
+  bottom:5px;
+  width:140px;
+  right:390px;
+  border:2px solid #6FA833;
+  padding:10px;
+  background-color:#fff;
+  border-radius:5px 5px 5px 5px !important;
+  box-shadow:0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+}
+</style>
+
+
+<!--点击图片放大// 展开代码会触发?（待改进-->
+<!--引用js和css-->
+<link href="https://blog-static.cnblogs.com/files/SutsuharaYuki/zoomify.min.css" rel="stylesheet">
+<script src="https://blog-static.cnblogs.com/files/SutsuharaYuki/zoomify.min.js"></script>
+<!--引用js和css-->
+<script>
+$(function(){
+$('#cnblogs_post_body').find('img:not([alt="复制代码"])').each(function(){
+    $(this).zoomify(); // Default settings
+    $(this).zoomify({ duration: 1000 }); // 1s duration
+})
+})
+</script>
+
+<!--回到顶部-->
+<style>
+.box{
+
+    position:fixed;
+    right:20px;
+    bottom: 480px;
+    height:30px;
+    width: 50px;    
+    text-align:center;
+    padding-top:20px;    
+    background-color: lightblue;
+    border-radius: 20%;
+    overflow: hidden;
+}
+.box:hover:before{
+    top:50%
+}
+.box:hover .box-in{
+    visibility: hidden;
+}
+.box:before{
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    content:'顶部';
+    width: 40px;
+    color:peru;
+    font-weight:bold;
+}    
+.box-in{
+    visibility: visible;
+    display:inline-block;
+    height:20px;
+    width: 20px;
+    border: 3px solid black;
+    border-color: white transparent transparent white;
+    transform:rotate(45deg);
+}
+</style>
+
+<div id="box" class="box">
+    <div class="box-in"></div>
+</div>
+<script>
+    var timer  = null;
+    box.onclick = function(){
+        cancelAnimationFrame(timer);
+        timer = requestAnimationFrame(
+            function fn(){
+            var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+            if(oTop > 0){
+                document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+                timer = requestAnimationFrame(fn);
+            }
+            else{
+                cancelAnimationFrame(timer);
+            }    
+        }
+        );
+    }
+</script>
+
+
+<!--百度分享栏-->
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"YukiRinLL - 博客","bdMini":"2","bdMiniList":["mshare","qzone","tsina","weixin","tqq","tieba","sqq","fbook","twi","copy"],"bdPic":"https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470910/o_46c84c10b912c8fcbd61ceaffc039245d7882180.gif","bdStyle":"1","bdSize":"24"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"},"image":{"viewList":["qzone","sqq","tqq","tsina","weixin","tieba","fbook","twi","mail","copy","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","sqq","tqq","tsina","weixin","tieba","fbook","twi","mail","copy","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<!--更改网页标题-->
+<title>标题</title>
+<script>
+    document.title = '(ノ￣▽￣)    请多指教 !'
+</script>
+<!--网页标题(title)动态改变-->
+<!--离开和回到当前页 网页标题改变-->
+    <script>
+        window.onload = function () {
+            var OriginTitile = document.title;
+            var titleTime;
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    $('[rel="shortcut icon"]').attr('href', "/Content/Images/fail.ico");
+                    document.title = '( * ￣▽￣)／肿么不看了呢？';
+                    clearTimeout(titleTime);
+                }
+                else {
+                    $('[rel="shortcut icon"]').attr('href', "/Content/Images/icon.png");
+                    document.title = '(～￣▽￣)～咦！又开始看了！' + OriginTitile;
+                    titleTime = setTimeout(function () {
+                        document.title = OriginTitile;
+                    }, 2000);
+                }
+            });
+        }
+    </script>
+
+<!--宠物pet-->

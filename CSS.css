@@ -1,0 +1,342 @@
+/*================================*/
+#home {
+    zoom:0.85;/*缩放 0.85*/
+    opacity: 0.80;/*透明度 默认0.80*/
+    margin: 0 auto;
+    width: 75%;/*原始65 自定义55*/
+    min-width: 980px;/*页面顶部的宽度 默认980*/
+    background-color: rgba(245, 245, 245, 0.5);
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+}
+/*================================*/
+body {
+    color: #000;
+    /*原来用的背景图*/
+    background: url('https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_c8422da75ab12a5776fe4647d352665df16c6a21.jpg')fixed;/*背景图*/
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /*字体修改*/
+    font-family: "Helvetica Neue",'Lato', "PingFang SC", "Microsoft YaHei", sans-serif,Helvetica,Verdana,Arial,sans-serif;
+    font-size: 12px;/*set14*/
+    line-height: 2;
+    min-height: 101%;
+    color: #555;
+    
+}
+
+/*博客标题*/
+#blogTitle {
+    height: 100px;  /*高度*/
+    clear: both;
+    background-color: rgba(245, 245, 245, 0);
+}
+#blogTitle h1 {
+    font-size: 36px/*set 26*/;
+    font-weight: bold;
+    line-height: 1.8em;/*原始 1.6em set 1.5*/
+    margin-top: 10px;/*原始 15px */
+    margin-bottom: 20px;
+    text-align: center;
+    color: #81D7D3;
+}
+.headermaintitle {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 36px ！calc;
+    font-size: 26px;
+    font-weight: normal;
+   color:#fff !important;
+    font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+#blogTitle h2 {
+    font-weight: normal;
+    font-size: 17px;/*原始 16px ；font-size: 1.0rem;*/      
+    line-height: 1.8;
+    color: #111;
+    font-weight: bold;
+    text-align: right;
+    float: right; 
+}
+#navigator{
+    width: 61.8%;/*customed*/
+    background-color: rgba(0,0,0,0.35);
+}
+#navList a:link, #navList a:visited, #navList a:active{
+    color: #eee;
+    font-size: 18px;
+    font-weight: bold;
+}
+.blogStats{
+    color: #eee;
+}
+.postTitle {
+    border-left: 8px solid rgba(33, 160, 139, 0.68);
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    clear: both;
+}
+.postTitle a:link, .postTitle a:visited, .postTitle a:active {
+    color: #21759b;
+    transition: all 0.4s linear 0s;
+}
+.postTitle a:hover {
+    margin-left: 30px;
+    color: #0f3647;
+    text-decoration: none;
+}
+.postCon {
+    float: right;
+    line-height: 1.5em;
+    width: 90%;/*默认100*/
+    clear: both;
+    padding: 10px 0;
+}
+.day .postTitle a {
+    padding-left: 10px;
+}
+.day {
+    background: rgba(255, 255, 255, 0.5);
+}
+/*================================*/
+
+/* 修改鼠标样式为图片 */
+*{
+     cursor:url('https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470910/o_miku1.png'), auto;
+}
+a{
+     cursor:url('https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470910/o_miku2.png'), auto;
+}
+
+/*反馈栏*/
+.feedback_area_title {
+    margin-bottom:0;
+    border-bottom:1px solid #EDEDED;
+}
+.feedbackItem {
+    background-color: #F5F5F5;
+    margin-top:10px;
+}
+.feedbackListSubtitle {
+    padding:10px 10px 0 10px;
+}
+.feedbackCon {
+    padding:10px;
+    margin:0;
+}
+.feedbackCon img {
+    border-radius: 50%;
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.feedbackCon img:hover {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+    -o-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+}
+.feedbackCon .body_right {
+    padding:0 10px 0 0;
+}
+.feedbackCon .comment_vote {
+    padding:10px 0 0 0;
+}
+
+/*评论区*/
+#comment_nav {
+    margin-top:10px;
+}
+#commentform_title {
+    margin-bottom:0;
+    border-bottom:1px solid #EDEDED;
+}
+
+/*button input 美化*/
+.input_my_zzk{
+border-radius:3px;
+border: 1px solid #000000;
+width:120px;
+height:26px;
+}
+input.btn_my_zzk {
+    height: 30px;
+   padding:5px  10px;
+    vertical-align: none;
+border-radius:3px;
+border:1px solid;
+}
+.comment_btn{
+  height: 38px;
+border-radius:3px;
+border:1px solid;
+}
+
+/*代码框背景*/
+.cnblogs_code {
+    background: #D6D6D6 !important;
+}
+
+/*代码框一些其他定制*/
+.code_img_closed,.code_img_opened {
+    cursor:pointer;
+}
+.cnblogs_code_collapse {
+    cursor:pointer;
+    border:0;
+    padding:0;
+}
+.cnblogs_code_toolbar {
+    display:none;
+}
+
+/*文章附加信息*/
+.postDesc {   
+    background: url(images/posted_time.png) no-repeat 0 1px;
+    color: #757575;
+    float: left;
+    width: 100%;
+    clear: both;
+    text-align: left;     
+    font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+    font-size: 13px;
+    padding-right: 20px;/*5px  padding-left: 90px;posted 发表时间左边距离*/
+    margin-top: 20px;
+    line-height: 1.8;
+    padding-bottom: 35px;
+}
+.newsItem, .catListEssay, .catListLink, .catListNoteBook, .catListTag, .catListPostCategory, 
+.catListPostArchive, .catListImageCategory, .catListArticleArchive, .catListView, 
+.catListFeedback, .mySearch, .catListComment, .catListBlogRank, .catList, .catListArticleCategory ,#blog-calendar
+{
+    background: rgba(255, 255, 255, 0.5);
+    margin-bottom: 35px;
+    word-wrap: break-word;
+}
+.CalTitle{
+    background: rgba(255, 255, 255, 0);
+}
+.catListTitle{
+    background-color: rgba(33, 160, 139, 0.9);
+}
+#topics{
+    background: rgba(255, 255, 255, 0.5);
+}
+.c_ad_block{
+    display: none;
+}
+#tbCommentBody{
+    width: 100%;/*默认100*/
+    height: 200px;
+    background: rgba(255, 255, 255, 0.5);
+}
+#q{background: rgba(255, 255, 255, 0);}
+.CalNextPrev{background: rgba(255, 255, 255, 0);}
+.cnblogs_code{
+    background: rgba(255, 255, 255, 0);    
+}
+.cnblogs_code div{
+    background: rgba(255, 255, 255, 0);    
+}
+.cnblogs_code_toolbar{
+    background: rgba(255, 255, 255, 0);  
+}
+.entrylist{
+    background: rgba(255, 255, 255, 0.5);  
+}
+
+/*推荐置顶设置*/
+#div_digg{
+     position:fixed;
+     bottom:5px;
+     width:140px;
+     right:650px;
+     border:2px solid #6FA833;
+     padding:10px;
+     background-color:#fff;
+     border-radius:5px 5px 5px 5px !important;
+     box-shadow:0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+   }
+#div_digg:hover {
+      box-shadow:0 0 0 1px #5F5A4B, 2px 2px 10px 2px rgba(10, 10, 0, 0.5);
+   }
+/*段落标题Hover效果设置*/
+   #cnblogs_post_body
+   {
+       color: black; 
+       font: 0.875em/1.5em "微软雅黑" , "PTSans" , "Arial" ,sans-serif;
+       font-size: 15px;
+   }
+   #cnblogs_post_body h1    {
+       background: #169FE6;
+       border-radius: 4px 4px 4px 4px;
+         font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+         font-size: 23px;
+         font-weight: bold;
+         height: 25px;
+         line-height: 25px;
+       margin: 18px 0 0 0;
+       padding: 5px 0 5px 5px;
+       transition: all 0.8s;
+   }
+   #cnblogs_post_body h2    {
+       background: #169FE6;
+       border-radius: 4px 4px 4px 4px;
+       color: #FFFFFF;
+         font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+         font-size: 20px;
+         font-weight: bold;
+         height: 25px;
+         line-height: 25px;
+       margin: 18px 0 0 0;
+       padding: 5px 0 5px 5px;
+       transition: all 0.8s;
+   }
+   #cnblogs_post_body h3    {
+       background: #D191FF;
+       border-radius: 4px 4px 4px 4px;
+       color: #FFFFFF;
+         font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+         font-size: 18px;
+         font-weight: bold;
+         height: 25px;
+         line-height: 25px;
+       margin: 18px 0 0 0;
+      padding: 5px 0 5px 5px;
+       transition: all 0.8s;
+   }
+   #cnblogs_post_body h4{
+      background: #A8D08D;
+       border-radius: 4px 4px 4px 4px;
+       color: #FFFFFF;
+         font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+         font-size: 18px;
+         font-weight: bold;
+        height: 25px;
+         line-height: 25px;
+       margin: 18px 0 0 0;
+       padding: 5px 0 5px 5px;
+       transition: all 0.8s;
+   }
+   #cnblogs_post_body h1:hover {
+       transform: rotateX(360deg);
+       background-color: #0066FF;
+   }
+   #cnblogs_post_body h2:hover {
+       transform: rotateX(360deg);
+       background-color: #0066FF;
+   }
+   #cnblogs_post_body h3:hover {
+       transform: rotateX(360deg);
+   }
+   #cnblogs_post_body h4:hover {
+       transform: rotateX(360deg);
+}
+/*QQ_contact --未实现*/
