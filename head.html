@@ -4,7 +4,7 @@
     //<!CDATA[
         var bodyBgs = [];
         bodyBgs[0] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_c8422da75ab12a5776fe4647d352665df16c6a21.jpg";
-        bodyBgs[2] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_99dc832a4dbb6bb3d62a292e8cf12f8d1652b5fd.jpg";
+        bodyBgs[1] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_99dc832a4dbb6bb3d62a292e8cf12f8d1652b5fd.jpg";
         bodyBgs[3] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_92206e6dd9468cf5b3d3202f7f66c7dfc64d4e04.jpg";
         bodyBgs[4] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_2044364624-3.jpg";
         bodyBgs[5] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_1-1Z10H24410-50.jpg";
@@ -20,15 +20,15 @@
         bodyBgs[15] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_o_IMG_107gai.jpg";
         bodyBgs[16] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_20443C944-15.jpg";
         bodyBgs[17] = "https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_20443B236-14.jpg";
-        var randomBgIndex = Math.round( Math.random() * 17 );
+        var randomBgIndex = Math.floor(Math.random() * bodyBgs.length);
     //out put random pic
-        document.write('<style>body{background:url(' + bodyBgs[randomBgIndex] + ')fixed;background-size:cover;no-repeat 50% 0}</style>');
+        document.write('<style>body{background-image:url("' + bodyBgs[randomBgIndex] + '");background-attachment:fixed;background-size:cover;background-repeat:no-repeat;background-position:50% 0}</style>');
     //]]>
     </script>
 
 
 <!--font-awesome framework from Wider(not used anymore)-->
-<!--<link href="https://blog-static.cnblogs.com/files/SutsuharaYuki/font-awesome.min.css" rel="stylesheet">-->
+<link href="https://blog-static.cnblogs.com/files/SutsuharaYuki/font-awesome.min.css" rel="stylesheet">
 
 <!--customTimer(not used anymore)-->
 <!--Yuki:20220719-->
@@ -86,3 +86,23 @@ var jiathis_config={
 <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?btn=r.gif&move=0" charset="utf-8"></script>
 -->
 <!--JiaThis Button END-->
+
+<!-- Legacy share button retained from the previous commit. -->
+<script type="text/javascript">
+var jiathis_config = {
+    siteNum: 15,
+    sm: "copy,qzone,tsina,weixin,tqq,tsohu,renren,cqq,tieba,douban,kaixin001,t163,yixin,51,copy",
+    summary: "",
+    boldNum: 6,
+    showClose: true,
+    shortUrl: false,
+    hideMore: false
+};
+</script>
+<script type="text/javascript" src="https://v3.jiathis.com/code/jiathis_r.js?btn=r.gif&amp;move=0" charset="utf-8"></script>
+
+<!-- Weather widget retained from the previous commit. -->
+<script type="text/javascript">
+WIDGET = { FID: '9fVgD01DNt' };
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>

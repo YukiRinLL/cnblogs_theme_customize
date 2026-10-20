@@ -187,6 +187,51 @@
 <!--//     document.getElementById('loading').style.display = "none";-->
 <!--// });-->
 <!--</script>-->
+
+<!-- Restored functional enhancements from the previous commit. -->
+<script src="https://blog-static.cnblogs.com/files/SutsuharaYuki/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="https://files.cnblogs.com/files/SutsuharaYuki/SmoothScroll.min.js"></script>
+<script>
+(function ($) {
+    if (!$) return;
+
+    $(function () {
+        var footer = $('#footer');
+        if (footer.length && !$('#customFooter').length) {
+            var text = footer.text();
+            footer.empty().prepend(
+                '<div id="customFooter"><h1 class="footer-title">Contact with me</h1>' +
+                '<p id="copyright">' + text + ' Theme By <a href="https://www.cnblogs.com/SutsuharaYuki/">YukiRinLL</a></p></div>'
+            );
+        }
+    });
+
+    $(document).ajaxComplete(function (event, xhr, option) {
+        var url = option && option.url ? option.url : '';
+        if (url.indexOf('GetComments') > -1) {
+            setTimeout(function () {
+                $('.blog_comment_body').each(function () {
+                    var self = $(this);
+                    if (self.prev('.author_avatar').length) return;
+                    var id = (self.attr('id') || '').split('_')[2];
+                    var image = $('#comment_' + id + '_avatar').html() || 'https://pic.cnblogs.com/avatar/simple_avatar.gif';
+                    self.before('<img src="' + image + '" class="author_avatar" alt="评论头像">');
+                });
+            }, 200);
+        }
+        if (url.indexOf('CommentForm') > -1) {
+            setTimeout(function () { $('#tbCommentBody').attr('placeholder', '来玩嘛大爷╰(￣▽￣)╭'); }, 200);
+        }
+        if (url.indexOf('GetFollowStatus') > -1 && $('#sideBar #p_b_follow a').text() === '+加关注') {
+            $('#sideBar #p_b_follow a').html('<i class="fa fa-heart" aria-hidden="true"></i>&nbsp;关注');
+        }
+    });
+})(window.jQuery);
+
+(function (console) {
+    if (console && console.log) console.log('%c欢迎访问YukiRinLL的博客', 'color:#256b78;font-weight:bold');
+})(window.console);
+</script>
 <!--<script type="text/x-mathjax-config">-->
 <!--MathJax.Hub.Config({-->
 <!--    showProcessingMessages: false, //关闭js加载过程信息-->
@@ -261,9 +306,9 @@ jQuery(document).ready(function($) {
 var ap = new APlayer({
     element: document.getElementById('player'),
     narrow: false,
-    autoplay: false,          <!-- 是否自动播放 -->
+    autoplay: false,          // 是否自动播放
     showlrc: false,
-    theme: '#F5F5F5',      <!-- 插件背景颜色，建议和你的公告栏背景色一样，这样融为一体的感觉 -->
+    theme: '#81D7D3',      // 插件背景颜色，与主题强调色统一
     music: [{
             title: 'Utopiosphere',
             author: 'Mili',

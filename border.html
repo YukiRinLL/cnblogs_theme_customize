@@ -36,7 +36,11 @@
 <!--Clock-->
 <!--Yuki:20190724-->
 <!--round clock plugin begin-->
-<script type="text/javascript" src="https://blog-static.cnblogs.com/files/SutsuharaYuki/RoundClock.js">
+<div class="clockdiv" align="center">
+    <canvas id="clock" width="200" height="200">您的浏览器不兼容canvas</canvas>
+</div>
+<script type="text/javascript" src="https://blog-static.cnblogs.com/files/SutsuharaYuki/RoundClock.js"></script>
+<script type="text/javascript">
   var dom = document.getElementById('clock');
   var ctx = dom.getContext('2d');
   var width = ctx.canvas.width;
@@ -143,17 +147,14 @@ function draw(){
     ctx.restore();
 }
 setInterval(draw, 1000);
-RoundClock.js
+draw();
 </script>
-<div class="clockdiv" align="center">
-    <canvas id="clock" width ="200px" height="200px">您的浏览器不兼容canvas</canvas>
-</div>
 <!--round clock plugin end-->
 
 <!--头像框-->
 <!--Yuki:20220719-->
 <style>
-profile,div {
+profile, profile div {
 	padding: 0;
 	margin: 0;
 }.to {
@@ -187,11 +188,12 @@ profile,div {
 	background-color: black;
 	position: relative;
 }
+.profile-card-inner { width: 200px; margin: 0 auto; text-align: center; }
 </style>
 
 <profile>
 <br>
-<div style="width:200px; float: center" align="center" >
+<div class="profile-card-inner" align="center">
     <div class="to3" align="center">
         <div class="to2" align="center">
             <div class="to1" align="center">
@@ -214,7 +216,7 @@ profile,div {
 <!--PersonalSignature-->
 <!--Yuki:20220719-->
 <PersonalSignature>
-    <div align="center" style="float: center">
+    <div align="center">
         <p><em>才疏学浅，还望指教！</em></p>
     </div>
 </PersonalSignature>
@@ -321,8 +323,8 @@ profile,div {
     <div class="box-in"></div>
 </div>
 <script>
-var timer  = null;
-box.onclick = function(){
+var timer = null;
+document.getElementById('box').onclick = function(){
     cancelAnimationFrame(timer);
     timer = requestAnimationFrame(
         function fn(){
@@ -367,4 +369,15 @@ window.onload = function () {
         }
     });
 }
+</script>
+
+<!-- Image zoom retained from the previous commit. -->
+<link href="https://blog-static.cnblogs.com/files/SutsuharaYuki/zoomify.min.css" rel="stylesheet">
+<script src="https://blog-static.cnblogs.com/files/SutsuharaYuki/zoomify.min.js"></script>
+<script>
+$(function () {
+    $('#cnblogs_post_body').find('img:not([alt="复制代码"])').each(function () {
+        $(this).zoomify({ duration: 1000 });
+    });
+});
 </script>
