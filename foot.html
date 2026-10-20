@@ -189,7 +189,25 @@
 <!--</script>-->
 
 <!-- Restored functional enhancements from the previous commit. -->
-<script src="https://blog-static.cnblogs.com/files/SutsuharaYuki/MathJax.js?config=TeX-AMS_HTML"></script>
+<!-- MathJax 3: Blog园 renders formulas as .math.inline/.math.display nodes. -->
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        ignoreHtmlClass: 'no-mathjax'
+    },
+    startup: {
+        typeset: true
+    }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://files.cnblogs.com/files/SutsuharaYuki/SmoothScroll.min.js"></script>
 <script>
 (function ($) {
