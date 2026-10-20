@@ -1,6 +1,8 @@
 <meta charset="utf-8" />
 
-<!--Wider的一些样式-->
+<!--CSS from Wider(not used anymore)-->
+<!--Yuki:20220719-->
+<!--
 <style type="text/css">
 .dashboard{
     background: #fff;
@@ -22,9 +24,18 @@
     margin: 2px;
 }
 </style>
+-->
+<!--
+<div align="center">
+<a href="http://www.amazingcounters.com">
+<img border="0" src="https://cc.amazingcounters.com/counter.php?i=3214944&amp;c=9645145" alt="AmazingCounters.com">
+</a>
+</div>
+-->
 
-
-<!--时钟插件-->
+<!--Clock-->
+<!--Yuki:20190724-->
+<!--round clock plugin begin-->
 <script type="text/javascript" src="https://blog-static.cnblogs.com/files/SutsuharaYuki/RoundClock.js">
   var dom = document.getElementById('clock');
   var ctx = dom.getContext('2d');
@@ -133,41 +144,102 @@ function draw(){
 }
 setInterval(draw, 1000);
 RoundClock.js
-</script><!-- 圆形时钟 -->
-<!--圆形时钟-->
-<div class="clockdiv">
+</script>
+<div class="clockdiv" align="center">
     <canvas id="clock" width ="200px" height="200px">您的浏览器不兼容canvas</canvas>
 </div>
+<!--round clock plugin end-->
+
+<!--头像框-->
+<!--Yuki:20220719-->
+<style>
+profile,div {
+	padding: 0;
+	margin: 0;
+}.to {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -50px;
+	margin-top: -50px;
+}.to1 {
+	width: 104px;
+	height: 104px;
+	border-radius: 50%;
+	background-color: white;
+	position: relative;
+}.to2 {
+	width: 104px;
+	height: 104px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -52px;
+	margin-top: -52px;
+}.to3 {
+	width: 106px;
+	height: 106px;
+	border-radius: 50%;
+	background-color: black;
+	position: relative;
+}
+</style>
+
+<profile>
+<br>
+<div style="width:200px; float: center" align="center" >
+    <div class="to3" align="center">
+        <div class="to2" align="center">
+            <div class="to1" align="center">
+                <img class="to" alt="YukiRinLL的QQ" src="https://pic.cnblogs.com/avatar/1683480/20210902100009.png">
+            </div>
+        </div>
+    </div>
+</div>
+</profile>
 
 
-<!--访问统计--> <!--外源加载(unavailable)-->
-
-<!-- 头像(用QQ联系查件改，可链接) -->
+<!-- 头像(用QQ联系插件改，可链接)(not used now) -->
+<!--Yuki:20220719-->
+<!--
 <a href="https://wpa.qq.com/msgrd?v=3&uin=944989026&site=qq&menu=yes" target="_blank">
-    <img border="0" src="https://pic.cnblogs.com/avatar/1683480/20190509225808.png" alt="YukiRinLL的QQ" title="YukiRinLL的QQ">
+    <img border="0" src="https://pic.cnblogs.com/avatar/1683480/20210902100009.png" alt="YukiRinLL的QQ" title="YukiRinLL的QQ">
 </a>
-<!--sentence-->
-<p>
-    <em> 才疏学浅，还望指教！</em>
-</p>
-<!--QQ联系设置-->
+-->
+
+<!--PersonalSignature-->
+<!--Yuki:20220719-->
+<PersonalSignature>
+    <div align="center" style="float: center">
+        <p><em>才疏学浅，还望指教！</em></p>
+    </div>
+</PersonalSignature>
+
+<!--QQ联系-->
+<!--Yuki:20190724-->
 <div id="contackInfo">
-联系：
-    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=944989026&amp;site=qq&amp;menu=yes">
-        <img align="absmiddle" border="0" src="http://wpa.qq.com/pa?p=2:944989026:41 &amp;r=0.30709030851721764" alt="欢迎与我联系"
-            title="欢迎与我联系">
-    </a>    
+    联系：
+    <a target="_blank" href="https://wpa.qq.com/msgrd?v=3&amp;uin=944989026&amp;site=qq&amp;menu=yes">
+        <img align="absmiddle" border="0" src="https://wpa.qq.com/pa?p=2:944989026:41 &amp;r=0.30709030851721764" alt="欢迎与我联系"
+             title="欢迎与我联系">
+    </a>
 </div>
 <!--name-->
-<p>姓名：鈴原 雪</p>
-<!--QQ群官网-一键加群-->
-加群：
+<p>姓名：鈴原 佑树</p>
+
+<!--QQ群官网-一键加群(not used now)-->
+<!--Yuki:20220719-->
+<!--加群：
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=303a701e79b0f2b46fdb9ff1ef683a465944759d9c1ae75b0edc8098174495e5"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="成理ACM竞赛队/程协新" title="成理ACM竞赛队/程协新"></a>
-<p>
-    <strong>欢迎加入！</strong>
-</p>
- 
+<p><strong>欢迎加入！</strong></p>
+-->
+
 <!-- 背景线段动画 -->
+<!--Yuki:20190724-->
 <canvas id="c_n9" width="1920" height="990" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas>
 <script src="https://blog-static.cnblogs.com/files/SutsuharaYuki/canvas-nest.min.js"></script>
 
@@ -176,7 +248,6 @@ RoundClock.js
 <script src="https://files.cnblogs.com/files/jingmoxukong/jquery.engine3D.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://files.cnblogs.com/files/jingmoxukong/jquery.particlePhysics.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://files.cnblogs.com/files/jingmoxukong/jquery.starfieldTagCloud.min.js" type="text/javascript" charset="utf-8"></script>
-
 <!-- 3D效果的标签云 -->
 <script src="http://files.cnblogs.com/justinw/jquery.engine3D.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://files.cnblogs.com/justinw/jquery.particlePhysics.js" type="text/javascript" charset="utf-8"></script>
@@ -187,12 +258,13 @@ RoundClock.js
     $(".catListPostCategory>ul").wrap("<div class='wrap' ></div>").parent().css({ 'width': '245px', 'height': '496px' });
     var options = { "range": [-200, 300], "gravity": -10, "xPos": 0.5, "yPos": 0.5, "gravityVector": [0, 0, 1], "interval": 100, "hoverGravityFactor": 0 };
     jQuery("div.wrap").starfieldTagCloud(options);
-}); 
+});
 </script>
 
 
-<!--更改推荐按钮-->
-<style type="text/css"> 
+<!--更改推荐按钮(not used anymore)-->
+<!--
+<style type="text/css">
 #div_digg{
   position:fixed;
   bottom:5px;
@@ -205,44 +277,28 @@ RoundClock.js
   box-shadow:0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
 }
 </style>
+-->
 
 
-<!--点击图片放大// 展开代码会触发?（待改进-->
-<!--引用js和css-->
-<link href="https://blog-static.cnblogs.com/files/SutsuharaYuki/zoomify.min.css" rel="stylesheet">
-<script src="https://blog-static.cnblogs.com/files/SutsuharaYuki/zoomify.min.js"></script>
-<!--引用js和css-->
-<script>
-$(function(){
-$('#cnblogs_post_body').find('img:not([alt="复制代码"])').each(function(){
-    $(this).zoomify(); // Default settings
-    $(this).zoomify({ duration: 1000 }); // 1s duration
-})
-})
-</script>
-
-<!--回到顶部-->
+<!--回到顶部按钮-->
+<!--Yuki:20190724-->
 <style>
 .box{
-
     position:fixed;
     right:20px;
     bottom: 480px;
     height:30px;
-    width: 50px;    
+    width: 50px;
     text-align:center;
-    padding-top:20px;    
+    padding-top:20px;
     background-color: lightblue;
     border-radius: 20%;
     overflow: hidden;
-}
-.box:hover:before{
+}.box:hover:before{
     top:50%
-}
-.box:hover .box-in{
+}.box:hover .box-in{
     visibility: hidden;
-}
-.box:before{
+}.box:before{
     position: absolute;
     top: -50%;
     left: 50%;
@@ -251,8 +307,7 @@ $('#cnblogs_post_body').find('img:not([alt="复制代码"])').each(function(){
     width: 40px;
     color:peru;
     font-weight:bold;
-}    
-.box-in{
+}.box-in{
     visibility: visible;
     display:inline-block;
     height:20px;
@@ -262,59 +317,54 @@ $('#cnblogs_post_body').find('img:not([alt="复制代码"])').each(function(){
     transform:rotate(45deg);
 }
 </style>
-
 <div id="box" class="box">
     <div class="box-in"></div>
 </div>
 <script>
-    var timer  = null;
-    box.onclick = function(){
-        cancelAnimationFrame(timer);
-        timer = requestAnimationFrame(
-            function fn(){
-            var oTop = document.body.scrollTop || document.documentElement.scrollTop;
-            if(oTop > 0){
-                document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
-                timer = requestAnimationFrame(fn);
-            }
-            else{
-                cancelAnimationFrame(timer);
-            }    
+var timer  = null;
+box.onclick = function(){
+    cancelAnimationFrame(timer);
+    timer = requestAnimationFrame(
+        function fn(){
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if(oTop > 0){
+            document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+            timer = requestAnimationFrame(fn);
         }
-        );
+        else{
+            cancelAnimationFrame(timer);
+        }
     }
+    );
+}
 </script>
 
 
-<!--百度分享栏-->
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"YukiRinLL - 博客","bdMini":"2","bdMiniList":["mshare","qzone","tsina","weixin","tqq","tieba","sqq","fbook","twi","copy"],"bdPic":"https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470910/o_46c84c10b912c8fcbd61ceaffc039245d7882180.gif","bdStyle":"1","bdSize":"24"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"},"image":{"viewList":["qzone","sqq","tqq","tsina","weixin","tieba","fbook","twi","mail","copy","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","sqq","tqq","tsina","weixin","tieba","fbook","twi","mail","copy","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
 <!--更改网页标题-->
+<!--Yuki:20190724-->
 <title>标题</title>
 <script>
     document.title = '(ノ￣▽￣)    请多指教 !'
 </script>
 <!--网页标题(title)动态改变-->
 <!--离开和回到当前页 网页标题改变-->
-    <script>
-        window.onload = function () {
-            var OriginTitile = document.title;
-            var titleTime;
-            document.addEventListener('visibilitychange', function () {
-                if (document.hidden) {
-                    $('[rel="shortcut icon"]').attr('href', "/Content/Images/fail.ico");
-                    document.title = '( * ￣▽￣)／肿么不看了呢？';
-                    clearTimeout(titleTime);
-                }
-                else {
-                    $('[rel="shortcut icon"]').attr('href', "/Content/Images/icon.png");
-                    document.title = '(～￣▽￣)～咦！又开始看了！' + OriginTitile;
-                    titleTime = setTimeout(function () {
-                        document.title = OriginTitile;
-                    }, 2000);
-                }
-            });
+<script>
+window.onload = function () {
+    var OriginTitile = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            $('[rel="shortcut icon"]').attr('href', "/Content/Images/fail.ico");
+            document.title = '( * ￣▽￣)／肿么不看了呢？';
+            clearTimeout(titleTime);
         }
-    </script>
-
-<!--宠物pet-->
+        else {
+            $('[rel="shortcut icon"]').attr('href', "/Content/Images/icon.png");
+            document.title = '(～￣▽￣)～咦！又开始看了！' + OriginTitile;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitile;
+            }, 2000);
+        }
+    });
+}
+</script>

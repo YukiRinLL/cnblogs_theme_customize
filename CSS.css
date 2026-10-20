@@ -1,9 +1,53 @@
+/*去广告*/
+#site_nav_under, #ad_under_post_holder, #comment_form_container,blog_news_kb,google_ad_c2, #comment_nav{ display:none !important;}
+
+/*在不同设备上显示优化*/
+/*
+#home{min-width:320px; !important;}
+#main{padding:10px !important; box-shadow:0 0 10px rgba(189, 189, 189, 0.4); max-width:960px !important; margin:auto !important;}
+#Header1_HeaderTitle{color:#e4f3f9;text-shadow:0 1px 1px rgba(255,255,255,.5);}
+.day{box-shadow:0 0 10px rgba(189, 189, 189, 0.4); padding:10px;}
+
+-webkit-border-radius:0 0 10px 10px; font-family:Arial;
+-moz-border-radius:0 0 10px 10px;}
+#navList li a{font-size:14px; color:White !important;; font-weight:blod; line-height:14px; padding:10px 10px 8px !important; border-bottom:2px transparent solid;}
+
+#sideBar{background:none; border:none; border-right:1px solid rgba(0, 0, 0, 0.05);box-shadow:none; border-radius:0px;}
+#sideBarMain ul{margin-left:2px;}
+#footer{display:none;}
+@media (max-width: 950px)
+{
+#home{max-width:inherit;}
+#main{min-width:inherit;max-width:inherit;}
+#mainContent, #mainContent .forFlow{ margin:auto;}
+#sideBar{display:none;}
+#mainContent{float:none;}
+}
+@media (max-width: 662px)
+{
+#main{margin-top:20px !important;}
+}
+@media (max-width: 520px)
+{
+#main{margin-top:50px !important;}
+}
+@media (max-width: 380px)
+{
+#MyLinks1_MyHomeLink, #MyLinks1_Syndication{display:none !important;}
+}
+.post{background-color:White !important;}
+.c_b_p_desc_readmore{float:right !important;}
+*/
+
+
+
+
 /*================================*/
 #home {
-    zoom:0.85;/*缩放 0.85*/
-    opacity: 0.80;/*透明度 默认0.80*/
+    zoom:1;/*缩放 0.85*/
+    opacity: 0.9;/*透明度 默认0.80*/
     margin: 0 auto;
-    width: 75%;/*原始65 自定义55*/
+    //width: 55%;/*原始65 自定义55*(因为新版特性不再使用)/
     min-width: 980px;/*页面顶部的宽度 默认980*/
     background-color: rgba(245, 245, 245, 0.5);
     padding: 30px;
@@ -15,9 +59,9 @@
 body {
     color: #000;
     /*原来用的背景图*/
-    background: url('https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_c8422da75ab12a5776fe4647d352665df16c6a21.jpg')fixed;/*背景图*/
-    background-size: cover;
-    background-repeat: no-repeat;
+    //background: url('https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_c8422da75ab12a5776fe4647d352665df16c6a21.jpg')fixed;/*背景图*/
+    //background-size: cover;
+    //background-repeat: no-repeat;
 
     /*字体修改*/
     font-family: "Helvetica Neue",'Lato', "PingFang SC", "Microsoft YaHei", sans-serif,Helvetica,Verdana,Arial,sans-serif;
@@ -62,7 +106,7 @@ body {
     float: right; 
 }
 #navigator{
-    width: 61.8%;/*customed*/
+    width: 60%;/*customed*/
     background-color: rgba(0,0,0,0.35);
 }
 #navList a:link, #navList a:visited, #navList a:active{
@@ -74,7 +118,7 @@ body {
     color: #eee;
 }
 .postTitle {
-    border-left: 8px solid rgba(33, 160, 139, 0.68);
+    border-left: 8px solid #81D7D3;
     margin-left: 10px;
     margin-bottom: 10px;
     font-size: 20px;
@@ -181,7 +225,7 @@ border:1px solid;
 
 /*代码框背景*/
 .cnblogs_code {
-    background: #D6D6D6 !important;
+    background: #efefef !important;
 }
 
 /*代码框一些其他定制*/
@@ -197,34 +241,52 @@ border:1px solid;
     display:none;
 }
 
+
 /*文章附加信息*/
+.postCon {   
+    background: url(images/posted_time.png) no-repeat 0 1px;
+    color: #000000;
+    float: center;
+    width: 90%;
+    height: 0;//added 20240509
+    text-align: left;
+    clear: both;
+    font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+    font-size: 14px;
+    margin-top: 0;//20px;
+    margin-botton: 0;
+    line-height: 1.8;
+    padding-bottom: 35px;
+}
 .postDesc {   
     background: url(images/posted_time.png) no-repeat 0 1px;
-    color: #757575;
+    color: #999999;
     float: left;
     width: 100%;
+    height: 0;//added 20240509
+    text-align: right;
     clear: both;
-    text-align: left;     
     font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
     font-size: 13px;
     padding-right: 20px;/*5px  padding-left: 90px;posted 发表时间左边距离*/
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-botton: 0;
     line-height: 1.8;
-    padding-bottom: 35px;
+    
 }
 .newsItem, .catListEssay, .catListLink, .catListNoteBook, .catListTag, .catListPostCategory, 
 .catListPostArchive, .catListImageCategory, .catListArticleArchive, .catListView, 
 .catListFeedback, .mySearch, .catListComment, .catListBlogRank, .catList, .catListArticleCategory ,#blog-calendar
 {
     background: rgba(255, 255, 255, 0.5);
-    margin-bottom: 35px;
+    margin-bottom: 0;//35px;
     word-wrap: break-word;
 }
 .CalTitle{
     background: rgba(255, 255, 255, 0);
 }
 .catListTitle{
-    background-color: rgba(33, 160, 139, 0.9);
+    background-color: #81D7D3;
 }
 #topics{
     background: rgba(255, 255, 255, 0.5);
@@ -258,7 +320,7 @@ border:1px solid;
      bottom:5px;
      width:140px;
      right:650px;
-     border:2px solid #6FA833;
+     border:2px solid #81D7D3;
      padding:10px;
      background-color:#fff;
      border-radius:5px 5px 5px 5px !important;
@@ -275,10 +337,11 @@ border:1px solid;
        font-size: 15px;
    }
    #cnblogs_post_body h1    {
-       background: #169FE6;
+       background: #81D7D3;
        border-radius: 4px 4px 4px 4px;
+       color: #FFFFFF;
          font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
-         font-size: 23px;
+         font-size: 26px;
          font-weight: bold;
          height: 25px;
          line-height: 25px;
@@ -287,7 +350,7 @@ border:1px solid;
        transition: all 0.8s;
    }
    #cnblogs_post_body h2    {
-       background: #169FE6;
+       background: #81D7D3;
        border-radius: 4px 4px 4px 4px;
        color: #FFFFFF;
          font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
@@ -300,7 +363,7 @@ border:1px solid;
        transition: all 0.8s;
    }
    #cnblogs_post_body h3    {
-       background: #D191FF;
+       background: #81D7D3;
        border-radius: 4px 4px 4px 4px;
        color: #FFFFFF;
          font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
@@ -313,7 +376,7 @@ border:1px solid;
        transition: all 0.8s;
    }
    #cnblogs_post_body h4{
-      background: #A8D08D;
+      background: #81D7D3;
        border-radius: 4px 4px 4px 4px;
        color: #FFFFFF;
          font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
@@ -327,11 +390,11 @@ border:1px solid;
    }
    #cnblogs_post_body h1:hover {
        transform: rotateX(360deg);
-       background-color: #0066FF;
+       background-color: #63a5a2;
    }
    #cnblogs_post_body h2:hover {
        transform: rotateX(360deg);
-       background-color: #0066FF;
+       background-color: #63a5a2;
    }
    #cnblogs_post_body h3:hover {
        transform: rotateX(360deg);

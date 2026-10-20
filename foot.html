@@ -1,214 +1,216 @@
-<script src="https://blog-static.cnblogs.com/files/SutsuharaYuki/MathJax.js?config=TeX-AMS_HTML"></script>
-<script src="https://files.cnblogs.com/files/SutsuharaYuki/SmoothScroll.min.js"></script>
+<!--Previous Functional Scripts(not used anymore)-->
+<!--Yuki:20220719-->
+<!--<script src="https://blog-static.cnblogs.com/files/SutsuharaYuki/MathJax.js?config=TeX-AMS_HTML"></script>-->
+<!--<script src="https://files.cnblogs.com/files/SutsuharaYuki/SmoothScroll.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--//var canShowAdsense=function(){return !!0};//去广告-->
+<!--$(document).ready(function(){-->
+<!--    //美化footer-->
+<!--    var footer=$("#footer");-->
+<!--    var text=footer.text();-->
+<!--    footer.empty();-->
+<!--    footer.prepend(-->
+<!--        '<div id="customFooter"><h1 class="footer-title">Contact with me</h1><ul><li><a href="#" target="_blank">Email</a></li><li><a href="#" target="944989026@qq.com">Wechat</a></li><li><a href="#" target="_blank">Github</a></li><li><a href="#" target="https://github.com/YukiRinLL">QQ</a></li></ul><p id="copyright">'+text+' Theme By <a href="https://www.cnblogs.com/SutsuharaYuki/" target="http://wpa.qq.com/msgrd?v=3&uin=944989026&site=qq&menu=yes" style="color:#707070">YukiRinLL</a></p></div>'-->
+<!--    );-->
+<!--});-->
+<!--// 控制台输出信息-->
+<!--(function(a){-->
+<!--    if (!a) return;-->
+<!--    var msg = "%c欢迎访问YukiRinLL的博客,\n鄙人蒟蒻,望各位大佬多加指点.\n ";-->
+<!--    if (window.chrome) {-->
+<!--        a.log("%c ", "padding:50px;background:url('https://pic.cnblogs.com/avatar/1683480/20210902100009.png')no-repeat;background-size: contain;");-->
+<!--        a.log(msg, "color:#0080FF");-->
+<!--    } else {-->
+<!--        a.log(msg.replace(/%c/g,''));-->
+<!--    }-->
+<!--})(top.console);-->
+
+<!--//ajaxComplete-->
+<!--$(document).ajaxComplete(function(event, xhr, option) {-->
+<!--    //评论头像-->
+<!--    if(option.url.indexOf("GetComments")>-1){setTimeout(function(){-->
+<!--        $.each($(".blog_comment_body"),function(index,ele){-->
+<!--            var self=$(ele);-->
+<!--            var id=self.attr("id").split("_")[2];-->
+<!--            var imgSrc=$("#comment_"+id+"_avatar").html()||"http://pic.cnblogs.com/avatar/simple_avatar.gif";-->
+<!--            self.before('<img src="'+imgSrc+'" style="float:left;" class="author_avatar">');-->
+<!--        });-->
+<!--    },200)};-->
+
+<!--    //评论框水印+调整页脚-->
+<!--    if(option.url.indexOf("CommentForm")>-1){setTimeout(function(){$("#tbCommentBody").attr("placeholder","来玩嘛大爷╰(￣▽￣)╭")},200)}-->
+<!--    if(option.url.indexOf("GetFollowStatus")>-1){-->
+<!--        //美化“加关注”按钮-->
+<!--        if($("#sideBar #p_b_follow a").text()=="+加关注")-->
+<!--        $("#sideBar #p_b_follow :contains('+加关注')").html("<i class=\"fa fa-heart\" aria-hidden=\"true\"></i>&nbsp;关注");-->
+<!--    }-->
+<!--    if(option.url.indexOf("sidecolumn")>-1){-->
+<!--        //日历的两个换页按钮-->
+<!--        $('.CalNextPrev a:contains("<")').empty().prepend('<i class="fa fa-chevron-left" aria-hidden="true"></i>');-->
+<!--        $('.CalNextPrev a:contains(">")').empty().prepend('<i class="fa fa-chevron-right" aria-hidden="true"></i>');-->
+<!--        //多彩标签颜色-->
+<!--        var taglist=document.querySelectorAll('#sidebar_postcategory li a')-->
+<!--        for(var i = 0; i < taglist.length; i++) {-->
+<!--           taglist[i].className = 'color-'+Math.floor(Math.random()*12+1);-->
+<!--        }-->
+<!--    }-->
+<!--});-->
+
+<!--//用来在head标签中添加link标签-->
+<!--function createLink(URL,lnkId,charset,media){-->
+<!--    var head = document.getElementsByTagName('head')[0],linkTag = null;-->
+<!--    if(!URL){return false;}-->
+<!--    linkTag = document.createElement('link');-->
+<!--    linkTag.setAttribute('rel','shortcut icon');-->
+<!--    linkTag.setAttribute('type','image/x-icon');-->
+<!--    linkTag.href = URL;-->
+<!--    head.appendChild(linkTag);-->
+<!--};-->
+<!--createLink('https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_u=2686629685,1606419266_fm=26_gp=0.jpg');-->
+
+<!--var head=$("#header");-->
+
+<!--//页首动态效果-->
+<!--head.prepend('<canvas id="bubble-canvas" style="position:absolute;left:half;top:half;"></canvas>');//位置-->
+<!--var _width, _height, largeHeader, _canvas, _ctx, _circles, _target, animateHeader = true;-->
+<!--function initHeader() {-->
+<!--    largeHeader = document.getElementById('header');-->
+<!--    _width = largeHeader.offsetWidth;-->
+<!--    // log(largeHeader.offsetWidth);-->
+<!--    _height = largeHeader.offsetHeight;-->
+<!--    // log(largeHeader.offsetHeight);-->
+<!--    _target = {x: 0, y: _height};-->
+<!--    _canvas = document.getElementById('bubble-canvas');-->
+<!--    _canvas.width = _width;-->
+<!--    _canvas.height = _height;-->
+<!--    _ctx = _canvas.getContext('2d');-->
+<!--    _circles = [];-->
+<!--    for(var x = 0; x < _width*0.5; x++) {-->
+<!--        var c = new Circle();-->
+<!--        _circles.push(c);-->
+<!--    }-->
+<!--    animate();-->
+<!--};-->
+<!--function addListeners() {-->
+<!--    window.addEventListener('scroll', scrollCheck);-->
+<!--    window.addEventListener('resize', resize);-->
+<!--};-->
+<!--function scrollCheck() {-->
+<!--    if(document.body.scrollTop > _height) animateHeader = false;-->
+<!--    else animateHeader = true;-->
+<!--};-->
+<!--function resize() {-->
+<!--    _width = largeHeader.offsetWidth;-->
+<!--    _height = largeHeader.offsetHeight;-->
+<!--    _canvas.width = _width;-->
+<!--    _canvas.height = _height;-->
+<!--};-->
+<!--function animate() {-->
+<!--    if(animateHeader) {-->
+<!--        _ctx.clearRect(0,0,_width,_height);-->
+<!--        for(var i in _circles) {-->
+<!--            _circles[i].draw();-->
+<!--        }-->
+<!--    };-->
+<!--    requestAnimationFrame(animate);-->
+<!--};-->
+<!--function Circle() {-->
+<!--    var _this = this;-->
+<!--    (function() {-->
+<!--        _this.pos = {};-->
+<!--        init();-->
+<!--    })();-->
+<!--    function init() {-->
+<!--        _this.pos.x = Math.random()*_width;-->
+<!--        _this.pos.y = _height+Math.random()*100;-->
+<!--        _this.alpha = 0.1+Math.random()*0.3;-->
+<!--        _this.scale = 0.1+Math.random()*0.3;-->
+<!--        _this.velocity = Math.random();-->
+<!--    };-->
+<!--    this.draw = function() {-->
+<!--        if(_this.alpha <= 0) {-->
+<!--            init();-->
+<!--        };-->
+<!--        _this.pos.y -= _this.velocity;-->
+<!--        _this.alpha -= 0.0005;-->
+<!--        _ctx.beginPath();-->
+<!--        _ctx.arc(_this.pos.x, _this.pos.y, _this.scale*10, 0, 2 * Math.PI, false);-->
+<!--        _ctx.fillStyle = 'rgba(255,255,255,'+ _this.alpha+')';-->
+<!--        _ctx.fill();-->
+<!--    };-->
+<!--};-->
+<!--addListeners();-->
+<!--initHeader();-->
+
+<!--//文章列表美化-->
+<!--function breakSameDayArticles(article_list){-->
+<!--    var _i=0;-->
+<!--    while(_i<article_list.length) {-->
+<!--        var dayTitle=article_list[_i].getElementsByClassName('dayTitle')[0];-->
+<!--        var postTitle=article_list[_i].getElementsByClassName('postTitle');-->
+<!--        var postCon=article_list[_i].getElementsByClassName('postCon');-->
+<!--        var postDesc=article_list[_i].getElementsByClassName('postDesc');-->
+<!--        if(postTitle.length>1) {-->
+
+<!--            for (var _j = 0; _j < postTitle.length; _j++) {-->
+<!--                var day=document.createElement('div');-->
+<!--                day.className='day';-->
+<!--                day.appendChild(dayTitle.cloneNode(true));-->
+<!--                day.appendChild(postTitle[_j].cloneNode(true));-->
+<!--                day.appendChild(postCon[_j].cloneNode(true));-->
+<!--                day.appendChild(postDesc[_j].cloneNode(true));-->
+<!--                article_list[_i].parentNode.insertBefore(day,article_list[_i]);-->
+<!--                _i++;-->
+<!--            }-->
+<!--            article_list[_i].parentNode.removeChild(article_list[_i]);-->
+<!--            _i&#45;&#45;;-->
+<!--        }-->
+<!--        _i++;-->
+<!--    }-->
+<!--};-->
+<!--function parseToDOM(str){-->
+<!--   var div = document.createElement("div");-->
+<!--   if(typeof str == "string")-->
+<!--       div.innerHTML = str;-->
+<!--   return div.childNodes[0];-->
+<!--};-->
+
+<!--function initBeauty(){-->
+<!--    var article_list=document.getElementsByClassName('day');-->
+<!--    breakSameDayArticles(article_list);-->
+<!--    beautyArticles(article_list);-->
+<!--};-->
+
+
+<!--// //消除遮罩-->
+<!--// document.addEventListener("DOMContentLoaded", function(){-->
+<!--//     document.getElementById('loading').style.display = "none";-->
+<!--// });-->
+<!--</script>-->
+<!--<script type="text/x-mathjax-config">-->
+<!--MathJax.Hub.Config({-->
+<!--    showProcessingMessages: false, //关闭js加载过程信息-->
+<!--    messageStyle: "none", //不显示信息-->
+<!--    extensions: ["tex2jax.js"],-->
+<!--    jax: ["input/TeX", "output/HTML-CSS"],-->
+<!--    tex2jax: {-->
+<!--        inlineMath:  [ ["$", "$"] ], //行内公式选择$-->
+<!--        displayMath: [ ["$$","$$"] ], //段内公式选择$$-->
+<!--        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'], //避开某些标签-->
+<!--//        ignoreClass:"comment-content" //避开含该Class的标签-->
+<!--    },-->
+<!--    "HTML-CSS": {-->
+<!--        availableFonts: ["STIX","TeX"], //可选字体-->
+<!--        showMathMenu: false //关闭右击菜单显示-->
+<!--    }-->
+<!--});-->
+<!--MathJax.Hub.Queue(["Typeset",MathJax.Hub]);-->
+<!--</script>-->
+
+
+<!--text click effect-->
+<!--Yuki:20190724-->
 <script type="text/javascript">
-//var canShowAdsense=function(){return !!0};//去广告
-
-$(document).ready(function(){
-    //美化footer 
-    var footer=$("#footer");
-    var text=footer.text();
-    footer.empty();
-    footer.prepend(
-        '<div id="customFooter"><h1 class="footer-title">Contact with me</h1><ul><li><a href="#" target="_blank">Email</a></li><li><a href="#" target="944989026@qq.com">Wechat</a></li><li><a href="#" target="_blank">Github</a></li><li><a href="#" target="https://github.com/YukiRinLL">QQ</a></li></ul><p id="copyright">'+text+' Theme By <a href="https://www.cnblogs.com/SutsuharaYuki/" target="http://wpa.qq.com/msgrd?v=3&uin=944989026&site=qq&menu=yes" style="color:#707070">YukiRinLL</a></p></div>'
-    );
-});
-
-// 控制台输出信息
-(function(a){
-    if (!a) return;
-    var msg = "%c欢迎访问YukiRinLL的博客,\n鄙人蒟蒻,望各位大佬多加指点.\n ";
-    if (window.chrome) {
-        a.log("%c ", "padding:50px;background:url('https://pic.cnblogs.com/avatar/1683480/20190509225808.png')no-repeat;background-size: contain;");
-        a.log(msg, "color:#0080FF");
-    } else {
-        a.log(msg.replace(/%c/g,''));
-    }
-})(top.console);
-
-//ajaxComplete
-$(document).ajaxComplete(function(event, xhr, option) {
-    //评论头像
-    if(option.url.indexOf("GetComments")>-1){setTimeout(function(){
-        $.each($(".blog_comment_body"),function(index,ele){
-            var self=$(ele);
-            var id=self.attr("id").split("_")[2];
-            var imgSrc=$("#comment_"+id+"_avatar").html()||"http://pic.cnblogs.com/avatar/simple_avatar.gif";
-            self.before('<img src="'+imgSrc+'" style="float:left;" class="author_avatar">');
-        });
-    },200)};
-
-    //评论框水印+调整页脚
-    if(option.url.indexOf("CommentForm")>-1){setTimeout(function(){$("#tbCommentBody").attr("placeholder","来玩嘛大爷╰(￣▽￣)╭")},200)}
-    if(option.url.indexOf("GetFollowStatus")>-1){
-        //美化“加关注”按钮 
-        if($("#sideBar #p_b_follow a").text()=="+加关注")
-        $("#sideBar #p_b_follow :contains('+加关注')").html("<i class=\"fa fa-heart\" aria-hidden=\"true\"></i>&nbsp;关注");
-    }
-    if(option.url.indexOf("sidecolumn")>-1){
-        //日历的两个换页按钮
-        $('.CalNextPrev a:contains("<")').empty().prepend('<i class="fa fa-chevron-left" aria-hidden="true"></i>');
-        $('.CalNextPrev a:contains(">")').empty().prepend('<i class="fa fa-chevron-right" aria-hidden="true"></i>');
-        //多彩标签颜色
-        var taglist=document.querySelectorAll('#sidebar_postcategory li a')
-        for(var i = 0; i < taglist.length; i++) {
-           taglist[i].className = 'color-'+Math.floor(Math.random()*12+1);
-        }
-    }
-}); 
-
-//用来在head标签中添加link标签
-function createLink(URL,lnkId,charset,media){
-    var head = document.getElementsByTagName('head')[0],linkTag = null;
-    if(!URL){return false;}
-    linkTag = document.createElement('link');
-    linkTag.setAttribute('rel','shortcut icon');
-    linkTag.setAttribute('type','image/x-icon');
-    linkTag.href = URL;
-    head.appendChild(linkTag);
-};
-createLink('https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/1470874/o_u=2686629685,1606419266_fm=26_gp=0.jpg');
-
-var head=$("#header");
-
-//页首动态效果
-head.prepend('<canvas id="bubble-canvas" style="position:absolute;left:half;top:half;"></canvas>');//位置
-var _width, _height, largeHeader, _canvas, _ctx, _circles, _target, animateHeader = true;
-function initHeader() {
-    largeHeader = document.getElementById('header');
-    _width = largeHeader.offsetWidth;
-    // log(largeHeader.offsetWidth);
-    _height = largeHeader.offsetHeight;
-    // log(largeHeader.offsetHeight);
-    _target = {x: 0, y: _height};
-    _canvas = document.getElementById('bubble-canvas');
-    _canvas.width = _width;
-    _canvas.height = _height;
-    _ctx = _canvas.getContext('2d');
-    _circles = [];
-    for(var x = 0; x < _width*0.5; x++) {
-        var c = new Circle();
-        _circles.push(c);
-    }
-    animate();
-};
-function addListeners() {
-    window.addEventListener('scroll', scrollCheck);
-    window.addEventListener('resize', resize);
-};
-function scrollCheck() {
-    if(document.body.scrollTop > _height) animateHeader = false;
-    else animateHeader = true;
-};
-function resize() {
-    _width = largeHeader.offsetWidth;
-    _height = largeHeader.offsetHeight;
-    _canvas.width = _width;
-    _canvas.height = _height;
-};
-function animate() {
-    if(animateHeader) {
-        _ctx.clearRect(0,0,_width,_height);
-        for(var i in _circles) {
-            _circles[i].draw();
-        }
-    };
-    requestAnimationFrame(animate);
-};
-function Circle() {
-    var _this = this;
-    (function() {
-        _this.pos = {};
-        init();
-    })();
-    function init() {
-        _this.pos.x = Math.random()*_width;
-        _this.pos.y = _height+Math.random()*100;
-        _this.alpha = 0.1+Math.random()*0.3;
-        _this.scale = 0.1+Math.random()*0.3;
-        _this.velocity = Math.random();
-    };
-    this.draw = function() {
-        if(_this.alpha <= 0) {
-            init();
-        };
-        _this.pos.y -= _this.velocity;
-        _this.alpha -= 0.0005;
-        _ctx.beginPath();
-        _ctx.arc(_this.pos.x, _this.pos.y, _this.scale*10, 0, 2 * Math.PI, false);
-        _ctx.fillStyle = 'rgba(255,255,255,'+ _this.alpha+')';
-        _ctx.fill();
-    };
-};
-addListeners();
-initHeader();
-
-//文章列表美化
-function breakSameDayArticles(article_list){
-    var _i=0;
-    while(_i<article_list.length) {
-        var dayTitle=article_list[_i].getElementsByClassName('dayTitle')[0];
-        var postTitle=article_list[_i].getElementsByClassName('postTitle');
-        var postCon=article_list[_i].getElementsByClassName('postCon');
-        var postDesc=article_list[_i].getElementsByClassName('postDesc');
-        if(postTitle.length>1) {
-
-            for (var _j = 0; _j < postTitle.length; _j++) {
-                var day=document.createElement('div');
-                day.className='day';
-                day.appendChild(dayTitle.cloneNode(true));
-                day.appendChild(postTitle[_j].cloneNode(true));
-                day.appendChild(postCon[_j].cloneNode(true));
-                day.appendChild(postDesc[_j].cloneNode(true));
-                article_list[_i].parentNode.insertBefore(day,article_list[_i]);
-                _i++;
-            }
-            article_list[_i].parentNode.removeChild(article_list[_i]);
-            _i--;
-        }
-        _i++;
-    }
-};
-function parseToDOM(str){
-   var div = document.createElement("div");
-   if(typeof str == "string")
-       div.innerHTML = str;
-   return div.childNodes[0];
-};
-
-function initBeauty(){
-    var article_list=document.getElementsByClassName('day');
-    breakSameDayArticles(article_list);
-    beautyArticles(article_list);
-};
-
-
-// //消除遮罩
-// document.addEventListener("DOMContentLoaded", function(){
-//     document.getElementById('loading').style.display = "none";
-// });
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    showProcessingMessages: false, //关闭js加载过程信息
-    messageStyle: "none", //不显示信息
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-        inlineMath:  [ ["$", "$"] ], //行内公式选择$
-        displayMath: [ ["$$","$$"] ], //段内公式选择$$
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'], //避开某些标签
-//        ignoreClass:"comment-content" //避开含该Class的标签
-    },
-    "HTML-CSS": {
-        availableFonts: ["STIX","TeX"], //可选字体
-        showMathMenu: false //关闭右击菜单显示
-    }
-});
-MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-</script>
-
-<script type="text/javascript">
-/* 鼠标特效 */
 var a_idx = 0;
 jQuery(document).ready(function($) {
     $("body").click(function(e) {
@@ -238,7 +240,43 @@ jQuery(document).ready(function($) {
 });
 </script>
 
-<!-- fork github 控件 -->
+
+<!--音乐播放器-->
+<!--Yuki:20191002-->
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>-->
+<!--<script src="https://myhkw.cn/player/js/player.js" id="myhk" key="demo" m="1"></script>-->
+
+
+<!-- 为博客底部添加音乐组件 -->
+<style>
+	#player {
+		position: fixed;
+		bottom: 0px;
+	}
+</style>
+<div id="player"  class="aplayer"></div>
+<link href="https://files.cnblogs.com/files/shwee/APlayer.min_v1.10.1.css" rel="stylesheet">
+<script src="https://files.cnblogs.com/files/shwee/APlayer.min_v1.10.1.js"></script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('player'),
+    narrow: false,
+    autoplay: false,          <!-- 是否自动播放 -->
+    showlrc: false,
+    theme: '#F5F5F5',      <!-- 插件背景颜色，建议和你的公告栏背景色一样，这样融为一体的感觉 -->
+    music: [{
+            title: 'Utopiosphere',
+            author: 'Mili',
+            url: 'https://files.cnblogs.com/files/SutsuharaYuki/Utopiosphere.swf?t=1700154859&download=true',
+            pic: 'https://images.cnblogs.com/cnblogs_com/SutsuharaYuki/2353212/o_231116171622_image.png'
+        }
+    ]
+});
+ap.init();
+</script>
+
+<!--fork github-->
+<!--Yuki:20190724-->
 <a href="https://github.com/YukiRinLL" class="github-corner" aria-label="View source on GitHub">
     <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -247,9 +285,3 @@ jQuery(document).ready(function($) {
     </svg>
 </a>
 <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-
-<!-- 天气插件 --><!--外源加载-->
-<script type="text/javascript">
-WIDGET = {FID: '9fVgD01DNt'}
-</script>
-<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
